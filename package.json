@@ -1,0 +1,27 @@
+{
+  "name": "sequelize-migrations",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "migration:create": "sequelize migration:generate --name",
+    "migrate": "sequelize db:migrate",
+    "migration:down": "sequelize db:migrate:undo",
+    "migration:down:all": "sequelize db:migrate:undo:all",
+    "seeder:create": "sequelize seed:generate --name",
+    "seeder:up": "sequelize db:seed:all",
+    "start": "serverless offline start --skipCacheInvalidation",
+    "seeder:down": "sequelize db:seed:undo",
+    "seeder:down:all": "sequelize db:seed:undo:all",
+    "migration:reset": "npm run migration:down:all && npm run migration:up && npm run seeder:up"
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.6.2"
+  },
+  "devDependencies": {
+    "serverless-offline": "^5.12.0",
+    "serverless-dotenv": "^1.0.0-beta.2",
+    "serverless-dotenv-plugin": "^2.1.1"
+  }
+}
